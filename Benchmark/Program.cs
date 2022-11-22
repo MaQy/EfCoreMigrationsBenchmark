@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 var summary = BenchmarkRunner.Run<MigrationTests>();
 
-[SimpleJob(RunStrategy.ColdStart, RuntimeMoniker.Net60, launchCount: 1, targetCount: 20)]
-[SimpleJob(RunStrategy.ColdStart, RuntimeMoniker.Net70, launchCount: 1, targetCount: 20)]
+[SimpleJob(RuntimeMoniker.Net60, launchCount: 3, targetCount: 50)]
+[SimpleJob(RuntimeMoniker.Net70, launchCount: 3, targetCount: 50)]
 public class MigrationTests
 {
     private readonly string filename = $"../../../../../../../../migrations_{Environment.Version}.sql";
